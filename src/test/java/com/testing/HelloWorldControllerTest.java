@@ -25,5 +25,14 @@ public class HelloWorldControllerTest {
         
         assertThat(result).containsKey(MESSAGE_KEY);
     }
+
+    @Test
+    public void responseShouldContainError() throws UnknownHostException {
+        int[] error_ar = {1,2,3};
+        int error_trigger = error_ar[4];
+        result = controller.err();
+
+        assertThat(result).containsKey(MESSAGE_KEY);
+    }
     
 }

@@ -32,6 +32,11 @@ public class HelloWorldController {
         return getResponse();
     }
 
+    @GetMapping(path = "/err", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Map<String, String> err() throws UnknownHostException {
+        return getResponse();
+    }
+
     private Map<String, String> getResponse() throws UnknownHostException {
         String host = InetAddress.getLocalHost().getHostName();
         String ip = InetAddress.getLocalHost().getHostAddress();
